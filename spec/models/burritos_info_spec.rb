@@ -31,6 +31,7 @@ RSpec.describe BurritosInfo, type: :model do
     end
   end
   context 'Validates Burrito Info part 2' do
+    let(:burritos) { build(:burritos) }
     describe 'Validates presence of required fields part 2' do
       it 'If no lat category2 is not Valid' do
         burritos.category_id2 = nil
@@ -49,6 +50,7 @@ RSpec.describe BurritosInfo, type: :model do
     end
   end
   context 'Validates if info obey to norms' do
+    let(:burritos) { build(:burritos) }
     describe 'validates if required atributes obey the norms' do
       it 'Burrito has all required fields, burrito is  Valid' do
         expect(burritos).to be_valid
