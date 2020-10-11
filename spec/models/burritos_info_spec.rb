@@ -13,6 +13,7 @@ RSpec.describe BurritosInfo, type: :model do
         burritos.address = nil
         expect(burritos).to_not be_valid
       end
+
       it 'If no lat s is not Valid' do
         burritos.lat = nil
         expect(burritos).to_not be_valid
@@ -27,7 +28,8 @@ RSpec.describe BurritosInfo, type: :model do
         burritos.category_id = nil
         expect(burritos).to_not be_valid
       end
-
+    end
+    describe 'Validates presence of required fields part 2' do
       it 'If no lat category2 is not Valid' do
         burritos.category_id2 = nil
         expect(burritos).to_not be_valid
