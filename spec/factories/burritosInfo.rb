@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :burritos, class: BurritosInfo do
     name { Faker::Company.name }
-    address{Faker::Address.street_address}
-    address_line_2{ Faker::Address.secondary_address }
+    address { Faker::Address.street_address }
+    address_line_2 { Faker::Address.secondary_address }
     lat { Faker::Address.latitude }
     lng { Faker::Address.latitude }
     category_id { Faker::Number.between(from: 1000, to: 1200) }
