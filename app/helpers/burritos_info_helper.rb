@@ -24,11 +24,11 @@ module BurritosInfoHelper
   end
 
   def format_hours_for_a(platform, hours)
-    if platform === 'a'
+    if platform === 'a' # rubocop:todo Style/CaseEquality
       new_hours = hours.gsub(/,/, '|')
       return new_hours.gsub(/ /, '-')
     end
-    if platform === 'b'
+    if platform === 'b' # rubocop:todo Style/CaseEquality
       days_of_week = %w[Mon Tue Wed Thu Fri Sat Sun]
       arr = []
       hours = hours.split(',')
@@ -42,28 +42,28 @@ module BurritosInfoHelper
       return new_hours.gsub(/ /, '-')
     end
 
-    hours.gsub(/ /, '-') if platform === 'c'
+    hours.gsub(/ /, '-') if platform === 'c' # rubocop:todo Style/CaseEquality
   end
 
   def format_for_platform(name, params)
-    if name === 'a'
+    if name === 'a' # rubocop:todo Style/CaseEquality
       params[:address] = "#{params[:address]} #{params[:address2_line_2]}"
       return params
     end
-    if name === 'b'
+    if name === 'b' # rubocop:todo Style/CaseEquality
       params[:street_address] = "#{params[:address]} #{params[:address2_line_2]}"
       params[:category_id] = params.delete :category_id2
       return params
     end
 
-    if name === 'c'
+    if name === 'c' # rubocop:todo Style/CaseEquality # rubocop:todo Style/GuardClause
       params[:address_line_1] = params[:address]
       params
     end
   end
 
   def checkresponse(response)
-    if 200 === response.to_i
+    if 200 === response.to_i # rubocop:todo Style/CaseEquality
       1
     else
       0
@@ -81,9 +81,9 @@ module BurritosInfoHelper
       platforms = %w[a b c]
       flag = 1
       platforms.each do |x|
-        flag = 0 if @api_service.update(x, JSON.parse(params)) === 1
+        flag = 0 if @api_service.update(x, JSON.parse(params)) === 1 # rubocop:todo Style/CaseEquality
       end
     end
-    Stack.delete_all if flag === 1
+    Stack.delete_all if flag === 1 # rubocop:todo Style/CaseEquality
   end
 end

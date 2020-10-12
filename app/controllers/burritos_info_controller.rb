@@ -16,7 +16,7 @@ class BurritosInfoController < ApplicationController
   end
 
   def create
-    @burritos_info = BurritosInfo.new(eval(params['info']))
+    @burritos_info = BurritosInfo.new(eval(params['info'])) # rubocop:todo Security/Eval
     respond_to do |format|
       if @burritos_info.save!
         format.html { redirect_to '/', notice: 'Burrito info was successfully created.' }
@@ -33,7 +33,9 @@ class BurritosInfoController < ApplicationController
     respond_to do |format|
       if @burritos.update(burrito_info_params)
         platforms.each do |x|
+          # rubocop:todo Style/CaseEquality
           add_to_queue(burrito_info_params) if @api_service.update(x, burrito_info_params) === 0
+          # rubocop:enable Style/CaseEquality
         end
         format.html { redirect_to '/', notice: 'Burrito info was successfully updated.' }
         format.json { render :show, status: :ok, location: @burrito_info }
