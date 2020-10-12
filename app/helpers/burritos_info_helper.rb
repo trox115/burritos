@@ -46,19 +46,19 @@ module BurritosInfoHelper
   end
 
   def format_for_platform(name, params)
-    if name.match?('a')
+    case name
+    when 'a'
       params[:address] = "#{params[:address]} #{params[:address2_line_2]}"
-      return params
-    end
-    if name.match?('b')
+      params
+    when 'b'
       params[:street_address] = "#{params[:address]} #{params[:address2_line_2]}"
       params[:category_id] = params.delete :category_id2
-      return params
-    end
-
-    if name.match?('b')
+      params
+    when 'c'
       params[:address_line_1] = params[:address]
       params
+    else
+      pp 'Error Occured'
     end
   end
 
