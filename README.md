@@ -17,7 +17,7 @@ On a new version it will allow the user to schedule closed times for holidays.
 
 ## Getting Started
 
-Open the [Live Demo Link](#).
+Open the [Live Demo Link](https://burritos.herokuapp.com/).
 
 ## Author
 
@@ -45,10 +45,10 @@ Give a star ⭐️ if you like this project!
 
 ## Burrito
 
-To view, the live demo click the [link](#) and you will be taken to dashboard page.
+To view, the live demo click the [link](https://burritos.herokuapp.com/) and you will be taken to dashboard page.
 
 
-![Login Page](documentation/images/1.png)
+![Dashboard](documentation/images/1.png)
 
 ### Update your DB
 
@@ -61,7 +61,7 @@ If you install the project locally, at the first login you will see a button to 
 You may now choose edit the info on the database by clicking on sidebar 'Edit' or on the link bellow your Database Card.
 Yow will then see a form
 
-![Barbers home Page](documentation/images/form.png)
+![Edit Info](documentation/images/form.png)
 
 As soon as you submit by clicking on the button, you will wait until the informations on api are stored too.
 
@@ -84,7 +84,7 @@ For installation instructions follow [The Installation Guide](https://www.tutori
 
 Once you have installed the required packages shown on the [Required Installations](), proceed with the following steps
 
-Clone the Repository, the folder barber-api will be downloaded
+Clone the Repository, the folder burritos will be downloaded
 
 ```Shell
 your@pc:~$ git clone https://github.com/trox115/burritos.git
