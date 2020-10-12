@@ -12,7 +12,6 @@ class BurritosInfoController < ApplicationController
   end
 
   def edit
-    # @burritos = BurritosInfo.first
   end
 
   def create

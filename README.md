@@ -38,6 +38,7 @@ Feel free to check the issues page.
 - [ ] Schedule Holidays.
 - [ ] Insert more platforms.
 - [ ] Coordinates through a map.
+- [ ] Make login system
 
 ## Show your support
 
