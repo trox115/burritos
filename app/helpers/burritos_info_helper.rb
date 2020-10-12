@@ -3,7 +3,7 @@ module BurritosInfoHelper
     validation_field = %w[name
                           address
                           street_address
-                          adress_line_2
+                          address_line_2
                           lat
                           lng
                           category_id
