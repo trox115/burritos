@@ -14,27 +14,27 @@
  *= require_self
  */
 
- .container{
-     display:flex;
- }
+.container {
+  display: flex;
+}
 
- .navbar{
-     width: 15%;
-     border-right: 1px solid black;
-     height: 100vh;
-    text-align: center;
-    
-    &__links{
-        width: 100%;
-        border-bottom: 1px solid gray;
-        margin-top:30px;
-    }
+.navbar {
+  width: 15%;
+  border-right: 1px solid black;
+  height: 100vh;
+  text-align: center;
 
-     &__link{
-        font-family: 'Lato', black;
-        font-weight: 600;
-        text-align: left;
-        color: black;
-        cursor: pointer;
-     }
- }
+  &__links {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    margin-top: 30px;
+  }
+
+  &__link {
+    font-family: "Lato", black;
+    font-weight: 600;
+    text-align: left;
+    color: black;
+    cursor: pointer;
+  }
+}

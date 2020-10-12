@@ -1,96 +1,95 @@
 // Place all the styles related to the burritosInfo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.api{
-    width: 80%;
-    &__wrapper{
-        display:flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
+.api {
+  width: 80%;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 
-    &__platform{
-        width: 20%;
-        background:gray;
-        color:black;
-        border:1px solid black;
-        box-sizing: border-box;
-        margin-left:1%;
-        background: #DCE5EC 0% 0% no-repeat padding-box;
-        height: 100vh;
-    }
+  &__platform {
+    width: 20%;
+    background: gray;
+    color: black;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin-left: 1%;
+    background: #dce5ec 0% 0% no-repeat padding-box;
+    height: 100vh;
+  }
 
-    &__title{
-        text-align: center;
-    }
-    
-    &__info{
-        font-weight: 900;   
-        text-transform: capitalize;
-        padding-left: 3%;
-    }
+  &__title {
+    text-align: center;
+  }
 
-    &__call{
-        font-weight: 500;
-    }
+  &__info {
+    font-weight: 900;
+    text-transform: capitalize;
+    padding-left: 3%;
+  }
 
-    &__link{
-        background: #0055C6 0% 0% no-repeat padding-box;
-        color:white;
-        padding: 10px 20px;
-        margin:10px 30%;
+  &__call {
+    font-weight: 500;
+  }
 
-        &:hover{
-            background: white;
-            color: #0055C6;
-        }
-    }
+  &__link {
+    background: #0055c6 0% 0% no-repeat padding-box;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 30%;
 
-    &__field{
-        width: 100%;
-        display:flex;
-        align-items: center;
-        margin-bottom: 20px;
+    &:hover {
+      background: white;
+      color: #0055c6;
     }
-    
-    &__label{
+  }
+
+  &__field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__label {
     font-size: 14px;
     font-weight: bold;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     margin-bottom: 2px;
     display: block;
-    margin-left:30px;
-    }
+    margin-left: 30px;
+  }
 
-    &__input {
-        display: block;
-        width: 100%;
-        border: 1px solid #ebebeb;
-        padding: 11px 20px;
-        box-sizing: border-box;
-        font-family: 'Montserrat';
-        font-weight: 500;
-        font-size: 13px; 
-        margin-left:30px;
-    
-        
-        &:focus{
-          border: 1px solid #ff6801;
-        }
-    }
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 30px;
 
-    &__submit{
-        width: 140px;
-        height: 40px;
-        display: inline-block;
-        font-family: 'Poppins';
-        font-weight: 400;
-        font-size: 13px;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        margin-left:auto;  
+    &:focus {
+      border: 1px solid #ff6801;
     }
+  }
+
+  &__submit {
+    width: 140px;
+    height: 40px;
+    display: inline-block;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
 }
