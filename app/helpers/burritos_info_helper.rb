@@ -58,7 +58,7 @@ module BurritosInfoHelper
 
     if name === 'c'
       params[:address_line_1] = params[:address]
-       params
+      params
     end
   end
 
