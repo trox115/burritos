@@ -11,8 +11,7 @@ class BurritosInfoController < ApplicationController
     stack
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @burritos_info = BurritosInfo.new(eval(params['info'])) # rubocop:todo Security/Eval
