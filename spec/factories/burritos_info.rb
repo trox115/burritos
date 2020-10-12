@@ -24,5 +24,4 @@ FactoryBot.define do
     phone_number { Faker::PhoneNumber.phone_number_with_country_code }
     website { 'http://localistico.com' }
   end
-
 end

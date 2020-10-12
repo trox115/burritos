@@ -8,11 +8,10 @@ RSpec.describe Stack, type: :model do
         expect(stack).to be_valid
       end
 
-      it 'Saves burrito on stack' do 
+      it 'Saves burrito on stack' do
         stack.save
         expect(stack).to be_valid
       end
-
     end
   end
 end
