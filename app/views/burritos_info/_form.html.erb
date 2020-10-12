@@ -1,7 +1,4 @@
 <%= form_for(@burritos) do |form| %>
-
-
-
   <div class="api__field">
     <%= form.label :name, class:'api__label'%>
     <%= form.text_field :name, class:'api__input' %>
@@ -38,9 +35,16 @@
   </div>
 
   <div class="api__field">
-    <%= form.label :closed, class:'api__label' %>
-    <%= form.select :closed, options_for_select([['Open', 'true'], ['Closed', 'false']]),class:'api__input'%>
+    <%= form.label :website, class:'api__label' %>
+    <%= form.text_field :website,class:'api__input' %>
   </div>
+
+  <div class="api__field">
+    <%= form.label :closed, class:'api__label' %>
+<%= form.select(:closed, options_for_select([['Closed', true], ['Open', false]]),:prompt => "Select") %>
+  </div>
+
+  
 
   <div class="api__field">
     <%= form.label :monday, class:'api__label' %>

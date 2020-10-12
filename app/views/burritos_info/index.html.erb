@@ -1,47 +1,40 @@
 <p id="notice" class='api__notice'><%= notice %></p>
 <div class='api__wrapper'>
-<div class='api__platform'>
-<h2 class='api__title'>Platform A </h2>
-
- <% @platform_a.each do |key, value| %>
-<p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
- <% end %>
-</div>
-
-<div class='api__platform'>
-<h2 class='api__title'>Platform B </h2>
- <% @platform_b.each do |key, value| %>
-<p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
- <% end %>
-</div>
-
-<div class='api__platform'>
-<h2 class='api__title'>Platform C </h2>
- <% @platform_c.each do |key, value| %>
-<p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
- <% end %>
-</div>
-
-<div class='api__platform'>
-<h2 class='api__title'>Your DB </h2>
-<% if @db_info != nil%>
-<p><%= @db_info.name %></p>
-        <p><%= @db_info.address %></p>
-        <p><%= @db_info.address_line_2 %></p>
-        <p><%= @db_info.lat %></p>
-        <p><%= @db_info.lng %></p>
-        <p><%= @db_info.category_id %></p>
-        <p><%= @db_info.category_id2 %></p>
-        <p><%= @db_info.closed %></p>
-        <p><%= @db_info.hours %></p>
-        <p><%= @db_info.website %></p>
-        <p><%= @db_info.phone_number %></p>
-    <%= link_to 'edit', burritos_info_edit_path, class:'api__link' %>
+  <div class='api__platform'>
+    <h2 class='api__title'>Platform A </h2>
+    <% @platform_a.each do |key, value| %>
+      <p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
+    <% end %>
+  </div>
+  <div class='api__platform'>
+    <h2 class='api__title'>Platform B </h2>
+    <% @platform_b.each do |key, value| %>
+      <p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
+    <% end %>
+  </div>
+  <div class='api__platform'>
+    <h2 class='api__title'>Platform C </h2>
+    <% @platform_c.each do |key, value| %>
+      <p class='api__info'><%=key.gsub(/_/," ") %> :<span class='api__call'><%= value %></span></p>
+    <% end %>
+  </div>
+  <div class='api__platform'>
+    <h2 class='api__title'>Your DB </h2>
+    <% if @db_info != nil%>
+      <p class='api__info'>Name: <span class='api__call'><%= @db_info.name %></span></p></p>
+      <p class='api__info'>Address: <span class='api__call'><%= @db_info.address %></span></p></p>
+      <p class='api__info'>Address line 2: <span class='api__call'><%= @db_info.address_line_2 %></span></p></p>
+      <p class='api__info'>Lat: <span class='api__call'><%= @db_info.lat %></span></p></p>
+      <p class='api__info'>Lng: <span class='api__call'><%= @db_info.lng %></span></p></p>
+      <p class='api__info'>Category Id: <span class='api__call'><%= @db_info.category_id %></span></p></p>
+      <p class='api__info'>Category Id 2: <span class='api__call'><%= @db_info.category_id2 %></span></p></p>
+      <p class='api__info'>Closed: <span class='api__call'><%= @db_info.closed %></span></p></p>
+      <p class='api__info'>Hours: <span class='api__call'><%= @db_info.hours %></span></p></p>
+      <p class='api__info'>Website: <span class='api__call'><%= @db_info.website %></span></p></p>
+      <p class='api__info'>Phone: <span class='api__call'><%= @db_info.phone_number %></span></p></p>
+      <%= link_to 'edit', burritos_info_edit_path, class:'api__link' %>
     <% else %>
-<%= render 'sync', burritos_info: @burrito_info %>   
- <%end%>
-</div>
-
-
- 
+      <%= render 'sync', burritos_info: @burrito_info %>   
+    <%end%>
+  </div>
 </div> 
