@@ -23,45 +23,70 @@ module BurritosInfoHelper
     merged.without('street_address', 'address_line_1')
   end
 
-  def formatHoursForA(platform,hours)
-    if platform==='a'
-         newHours= hours.gsub(/,/, '|')
-         return newHours.gsub(/ /,'-')
+  def formatHoursForA(platform, hours)
+    if platform === 'a'
+      newHours = hours.gsub(/,/, '|')
+      return newHours.gsub(/ /, '-')
     end
     if platform === 'b'
-        daysofWeek=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-        arr= []
-        hours = hours.split(",")
-        pp hours
-       hours.each_with_index do |val,index| 
-        
+      daysofWeek = %w[Mon Tue Wed Thu Fri Sat Sun]
+      arr = []
+      hours = hours.split(',')
+      pp hours
+      hours.each_with_index do |val, index|
         arr.push("#{daysofWeek[index]}:#{val}")
-       end
+      end
 
-       newHours= arr.join(',')
-       newHours= newHours.gsub(/,/, '|')
-       return newHours.gsub(/ /,'-')
+      newHours = arr.join(',')
+      newHours = newHours.gsub(/,/, '|')
+      return newHours.gsub(/ /, '-')
     end
 
-    if platform==='c'
-        return hours.gsub(/ /,'-')
-    end
-end
-def formatForPlatform(name,params)
-  if name==='a'
-      params[:address] = "#{params[:address]} #{params[:adress2]}"
-      return params
+    hours.gsub(/ /, '-') if platform === 'c'
   end
-  if name==='b'
-      params[:street_address] = "#{params[:address]} #{params[:adress2]}"
+
+  def formatForPlatform(name, params)
+    if name === 'a'
+      params[:address] = "#{params[:address]} #{params[:address2_line_2]}"
+      return params
+    end
+    if name === 'b'
+      params[:street_address] = "#{params[:address]} #{params[:address2_line_2]}"
       params[:category_id] = params.delete :category_id2
       return params
+    end
+
+    if name === 'c'
+      params[:address_line_1] = params[:address]
+      params
+    end
   end
 
-  if name==='c'
-      params[:address_line_1] = params[:address]
-      params[:address_line_2] = params[:adress2]
-      return params
+  def checkresponse(response)
+    if 200 === response.to_i
+      1
+    else
+      0
+    end
   end
-end
+
+  def addToQueue(params)
+    Stack.create!(params)
+  end
+
+  def stack
+    stack = Stack.all
+    size = Stack.count
+    params=Stack.first.to_json
+    
+
+    if size >= 1
+      platforms = %w[a b c]
+      flag=1
+      platforms.each do |x|
+        flag=0 if @api_service.update(x, JSON.parse(params))===1
+      end
+    end
+    Stack.delete_all if flag === 1
+  end
 end

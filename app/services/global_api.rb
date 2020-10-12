@@ -14,9 +14,10 @@ class GlobalApi
   end
 
   def update(name, platform_params)
+    pp platform_params
     platform_params['hours'] = formatHoursForA(name, platform_params['hours'])
     new_params = formatForPlatform(name, platform_params)
-    if ['a', 'b'].include?(name)
+    if %w[a b].include?(name)
       platform_params['address'] = "#{platform_params['address']} #{platform_params['address_line_2']}"
     end
     @options = { "venue": new_params }
@@ -26,16 +27,19 @@ class GlobalApi
                                 body: @options.to_json,
                                 headers: { 'Content-Type' => 'application/json' }
                               })
-    if 409.equal?response.code.to_i
-      seconds_to_wait ||= (e.response[HTTP_RETRY_AFTER] || 2).to_i unless seconds_to_wait
-      sleep seconds_to_wait
-      response = HTTParty.patch(url, {
-                                  body: @options.to_json,
-                                  headers: { 'Content-Type' => 'application/json' }
-                                })
+    if 429.equal? response.code.to_i
+      seconds_to_wait = 2
+      while 429.equal? response.code.to_i
+        seconds_to_wait += 2
+        break if seconds_to_wait > 60
+
+        sleep seconds_to_wait
+        response = HTTParty.patch(url, {
+                                    body: @options.to_json,
+                                    headers: { 'Content-Type' => 'application/json' }
+                                  })
+      end
     end
-    pp name
-    pp response
-    response
+     checkresponse(response.code)
   end
 end
