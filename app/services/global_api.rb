@@ -12,4 +12,6 @@ class GlobalApi
     response = HTTParty.get(url, @options)
     filter(response)
   end
+
+  
 end

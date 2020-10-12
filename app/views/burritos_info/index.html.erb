@@ -36,7 +36,7 @@
         <p><%= @db_info.hours %></p>
         <p><%= @db_info.website %></p>
         <p><%= @db_info.phone_number %></p>
-
+    <%= link_to 'edit', burritos_info_edit_path %>
     <% else %>
 <%= render 'sync', burritos_info: @burrito_info %>   
  <%end%>
