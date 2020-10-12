@@ -84,7 +84,7 @@ For installation instructions follow [The Installation Guide](https://www.tutori
 
 Once you have installed the required packages shown on the [Required Installations](), proceed with the following steps
 
-Clone the Repository, the folder barber-api will be downloaded
+Clone the Repository, the folder burritos will be downloaded
 
 ```Shell
 your@pc:~$ git clone https://github.com/trox115/burritos.git
