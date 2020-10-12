@@ -10,12 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_181248) do
+ActiveRecord::Schema.define(version: 2020_10_12_020506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "burritos_infos", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.integer "category_id"
+    t.integer "category_id2"
+    t.boolean "closed"
+    t.string "hours"
+    t.string "website"
+    t.string "address_line_2"
+    t.string "phone_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stacks", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.decimal "lat"
