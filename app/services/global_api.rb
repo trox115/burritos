@@ -7,7 +7,8 @@ class GlobalApi
   end
 
   def platform(name)
-    url = "#{Rails.application.credentials.api[:base_uri]}#{name}/venue?api_key=#{Rails.application.credentials.api[:api_key]}"
+    api = Rails.application.credentials.api[:api_key]
+    url = "#{Rails.application.credentials.api[:base_uri]}#{name}/venue?api_key=#{api}"
     response = HTTParty.get(url, @options)
     filter(response)
   end

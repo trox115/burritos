@@ -1,0 +1,233 @@
+<%= form_with(model: burritos_info, local: true) do |form| %>
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adress2 %>
+    <%= form.text_field :adress2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :long %>
+    <%= form.text_field :long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id1 %>
+    <%= form.number_field :category_id1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id2 %>
+    <%= form.number_field :category_id2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id3 %>
+    <%= form.number_field :category_id3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closed %>
+    <%= form.text_field :closed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monday %>
+     <%=
+    form.time_field :mondayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'mondayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :mondayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'mondayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+<div class="field">
+    <%= form.label :tuesday %>
+     <%=
+    form.time_field :tuesdayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'tuesdayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :tuesdayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'tuesdayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wednesday %>
+     <%=
+    form.time_field :wednesdayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'wednesdayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :wednesdayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'wednesdayC',
+      class: 'never-submit'
+  %>
+  </div>
+  <div class="field">
+    <%= form.label :thursday %>
+     <%=
+    form.time_field :thursdayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'thursdayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :thursdayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'thursdayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :friday %>
+     <%=
+    form.time_field :fridayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'fridayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :fridayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'fridayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saturday %>
+     <%=
+    form.time_field :saturdayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'saturdayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :saturdayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'saturdayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sunday %>
+     <%=
+    form.time_field :sundayO,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'sundayO',
+      class: 'never-submit'
+  %>
+    <%=
+    form.time_field :sundayC,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss',
+      id: 'sundayC',
+      class: 'never-submit'
+  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hours %>
+    <%= form.text_field :hours, id: 'hours' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<script>
+$(document).ready(function(){
+  
+  $("#mondayO, #mondayC, #tuesdayO,#tuesdayC,#wednesdayO,#wednesdayC,#thursdayO,#thursdayC,#fridayO,#fridayC,#saturdayO,#saturdayC,#sundayO,#sundayC").on('change', function () {
+    var mondayO = $('#mondayO');
+    var mondayC = $('#mondayC');
+    var tuesdayO = $('#tuesdayO');
+    var tuesdayC = $('#tuesdayC');
+    var wednesdayO = $('#wednesdayO');
+    var wednesdayC = $('#wednesdayC');
+var thursdayO = $('#thursdayO');
+    var thursdayC = $('#thursdayC');
+    var fridayO = $('#fridayO');
+    var fridayC = $('#fridayC');
+    var saturdayO = $('#saturdayO');
+    var saturdayC = $('#saturdayC');
+    var sundayO = $('#sundayO');
+    var sundayC = $('#sundayC');
+    var duration =`${mondayO[0].value} ${mondayC[0].value},${tuesdayO[0].value} ${tuesdayC[0].value},${wednesdayO[0].value} ${wednesdayC[0].value},${thursdayO[0].value} ${thursdayC[0].value},${fridayO[0].value} ${fridayC[0].value},${saturdayO[0].value} ${saturdayC[0].value},${sundayO[0].value} ${sundayC[0].value}`
+
+    $("#hours").val(duration).attr("disable","false");
+  });
+});
+
+$(document).ready(function() {
+  $('form').submit(function() {
+    $('.never-submit').prop('disabled', true);
+    return true;
+  });
+});
+
+</script>
