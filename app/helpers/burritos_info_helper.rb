@@ -15,37 +15,37 @@ module BurritosInfoHelper
     response.select { |k, _v| validation_field.any?(k) }
   end
 
-  def sync(a, b, c)
-    merged = c.merge(b)
+  def sync(plat_a, plat_b, plat_c)
+    merged = plat_c.merge(plat_b)
     merged['category_id2'] = merged['category_id']
-    merged = merged.merge(a)
+    merged = merged.merge(plat_a)
 
     merged.without('street_address', 'address_line_1')
   end
 
-  def formatHoursForA(platform, hours)
+  def format_hours_for_a(platform, hours)
     if platform === 'a'
-      newHours = hours.gsub(/,/, '|')
-      return newHours.gsub(/ /, '-')
+      new_hours = hours.gsub(/,/, '|')
+      return new_hours.gsub(/ /, '-')
     end
     if platform === 'b'
-      daysofWeek = %w[Mon Tue Wed Thu Fri Sat Sun]
+      days_of_week = %w[Mon Tue Wed Thu Fri Sat Sun]
       arr = []
       hours = hours.split(',')
       pp hours
       hours.each_with_index do |val, index|
-        arr.push("#{daysofWeek[index]}:#{val}")
+        arr.push("#{days_of_week[index]}:#{val}")
       end
 
-      newHours = arr.join(',')
-      newHours = newHours.gsub(/,/, '|')
-      return newHours.gsub(/ /, '-')
+      new_hours = arr.join(',')
+      new_hours = new_hours.gsub(/,/, '|')
+      return new_hours.gsub(/ /, '-')
     end
 
     hours.gsub(/ /, '-') if platform === 'c'
   end
 
-  def formatForPlatform(name, params)
+  def format_for_platform(name, params)
     if name === 'a'
       params[:address] = "#{params[:address]} #{params[:address2_line_2]}"
       return params
@@ -58,7 +58,7 @@ module BurritosInfoHelper
 
     if name === 'c'
       params[:address_line_1] = params[:address]
-      params
+       params
     end
   end
 
@@ -70,21 +70,18 @@ module BurritosInfoHelper
     end
   end
 
-  def addToQueue(params)
+  def add_to_queue(params)
     Stack.create!(params)
   end
 
   def stack
-    stack = Stack.all
-    size = Stack.count
-    params=Stack.first.to_json
-    
+    params = Stack.first.to_json
 
-    if size >= 1
+    if Stack.count >= 1
       platforms = %w[a b c]
-      flag=1
+      flag = 1
       platforms.each do |x|
-        flag=0 if @api_service.update(x, JSON.parse(params))===1
+        flag = 0 if @api_service.update(x, JSON.parse(params)) === 1
       end
     end
     Stack.delete_all if flag === 1

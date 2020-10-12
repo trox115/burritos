@@ -15,8 +15,8 @@ class GlobalApi
 
   def update(name, platform_params)
     pp platform_params
-    platform_params['hours'] = formatHoursForA(name, platform_params['hours'])
-    new_params = formatForPlatform(name, platform_params)
+    platform_params['hours'] = format_hours_for_a(name, platform_params['hours'])
+    new_params = format_for_platform(name, platform_params)
     if %w[a b].include?(name)
       platform_params['address'] = "#{platform_params['address']} #{platform_params['address_line_2']}"
     end
@@ -40,6 +40,6 @@ class GlobalApi
                                   })
       end
     end
-     checkresponse(response.code)
+    checkresponse(response.code)
   end
 end

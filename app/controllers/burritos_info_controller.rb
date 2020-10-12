@@ -8,7 +8,7 @@ class BurritosInfoController < ApplicationController
     @platform_b = @api_service.platform('b')
     @platform_c = @api_service.platform('c')
     @db_info = BurritosInfo.first
-    stack()
+    stack
   end
 
   def edit
@@ -33,7 +33,7 @@ class BurritosInfoController < ApplicationController
     respond_to do |format|
       if @burritos.update(burrito_info_params)
         platforms.each do |x|
-          addToQueue(burrito_info_params) if @api_service.update(x, burrito_info_params)===0
+          add_to_queue(burrito_info_params) if @api_service.update(x, burrito_info_params) === 0
         end
         format.html { redirect_to '/', notice: 'Burrito info was successfully updated.' }
         format.json { render :show, status: :ok, location: @burrito_info }
