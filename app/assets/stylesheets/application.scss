@@ -14,35 +14,27 @@
  *= require_self
  */
 
- .api{
-   
-    &__wrapper{
-        display:flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
+ .container{
+     display:flex;
+ }
 
-    &__platform{
-        width: 20%;
-        background:gray;
-        color:black;
-        border:1px solid black;
-        box-sizing: border-box;
-        margin-left:1%;
-    }
-
-    &__title{
-        text-align: center;
-    }
+ .navbar{
+     width: 15%;
+     border-right: 1px solid black;
+     height: 100vh;
+    text-align: center;
     
-    &__info{
-        font-weight: 900;   
-        text-transform: capitalize;
-        padding-left: 3%;
+    &__links{
+        width: 100%;
+        border-bottom: 1px solid gray;
+        margin-top:30px;
     }
 
-    &__call{
-        font-weight: 500;
-    }
-}
+     &__link{
+        font-family: 'Lato', black;
+        font-weight: 600;
+        text-align: left;
+        color: black;
+        cursor: pointer;
+     }
+ }

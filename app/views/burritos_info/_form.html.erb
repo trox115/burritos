@@ -2,55 +2,55 @@
 
 
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="api__field">
+    <%= form.label :name, class:'api__label'%>
+    <%= form.text_field :name, class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <div class="api__field">
+    <%= form.label :address, class:'api__label' %>
+    <%= form.text_field :address,class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :adress2 %>
-    <%= form.text_field :address_line_2%>
+  <div class="api__field">
+    <%= form.label :adress2, class:'api__label' %>
+    <%= form.text_field :address_line_2,class:'api__input'%>
   </div>
 
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat %>
+  <div class="api__field">
+    <%= form.label :lat, class:'api__label' %>
+    <%= form.text_field :lat,class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :lng %>
-    <%= form.text_field :lng %>
+  <div class="api__field">
+    <%= form.label :lng, class:'api__label' %>
+    <%= form.text_field :lng,class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.number_field :category_id %>
+  <div class="api__field">
+    <%= form.label :category_id, class:'api__label' %>
+    <%= form.number_field :category_id,class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id2 %>
-    <%= form.number_field :category_id2 %>
+  <div class="api__field">
+    <%= form.label :category_id2, class:'api__label' %>
+    <%= form.number_field :category_id2,class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :closed %>
-    <%= form.text_field :closed %>
+  <div class="api__field">
+    <%= form.label :closed, class:'api__label' %>
+    <%= form.select :closed, options_for_select([['Open', true], ['Closed', false]]),class:'api__input'%>
   </div>
 
-  <div class="field">
-    <%= form.label :monday %>
+  <div class="api__field">
+    <%= form.label :monday, class:'api__label' %>
      <%=
     form.time_field :mondayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'mondayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :mondayC,
@@ -58,19 +58,19 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'mondayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-<div class="field">
-    <%= form.label :tuesday %>
+<div class="api__field">
+    <%= form.label :tuesday, class:'api__label' %>
      <%=
     form.time_field :tuesdayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'tuesdayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :tuesdayC,
@@ -78,19 +78,19 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'tuesdayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-  <div class="field">
-    <%= form.label :wednesday %>
+  <div class="api__field">
+    <%= form.label :wednesday, class:'api__label' %>
      <%=
     form.time_field :wednesdayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'wednesdayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :wednesdayC,
@@ -98,18 +98,18 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'wednesdayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
-  <div class="field">
-    <%= form.label :thursday %>
+  <div class="api__field">
+    <%= form.label :thursday, class:'api__label' %>
      <%=
     form.time_field :thursdayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'thursdayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :thursdayC,
@@ -117,19 +117,19 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'thursdayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-  <div class="field">
-    <%= form.label :friday %>
+  <div class="api__field">
+    <%= form.label :friday, class:'api__label' %>
      <%=
     form.time_field :fridayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'fridayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :fridayC,
@@ -137,19 +137,19 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'fridayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-  <div class="field">
-    <%= form.label :saturday %>
+  <div class="api__field">
+    <%= form.label :saturday, class:'api__label' %>
      <%=
     form.time_field :saturdayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'saturdayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :saturdayC,
@@ -157,19 +157,19 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'saturdayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-  <div class="field">
-    <%= form.label :sunday %>
+  <div class="api__field">
+    <%= form.label :sunday, class:'api__label' %>
      <%=
     form.time_field :sundayO,
       value: "%H:%M",
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'sundayO',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
     <%=
     form.time_field :sundayC,
@@ -177,22 +177,22 @@
       min: 'hh:mm:ss',
       max: 'hh:mm:ss',
       id: 'sundayC',
-      class: 'never-submit'
+      class: 'never-submit api__input'
   %>
   </div>
 
-  <div class="field">
-    <%= form.label :hours %>
-    <%= form.text_field :hours, id: 'hours' %>
+  <div class="api__field">
+    <%= form.label :hours, class:'api__label' %>
+    <%= form.text_field :hours, id: 'hours',class:'api__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone_number %>
+  <div class="api__field">
+    <%= form.label :phone, class:'api__label' %>
+    <%= form.text_field :phone_number,class:'api__input' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'api__submit'%>
   </div>
 <% end %>
 <script>
