@@ -20,7 +20,9 @@ class BurritosInfoController < ApplicationController
         format.html { redirect_to '/', notice: 'Burrito info was successfully created.' }
         format.json { render :index, status: :created, location: @burrito_info }
       else
+        flash[:notice] = 'An error ocurred!'
         format.html { render :edit }
+
         format.json { render json: @burritos_info.errors, status: :unprocessable_entity }
       end
     end
@@ -39,6 +41,7 @@ class BurritosInfoController < ApplicationController
         format.json { render :show, status: :ok, location: @burrito_info }
 
       else
+        flash[:notice] = "An error occured #{@burritos.errors}"
         format.html { render :edit }
         format.json { render json: @burrito_info.errors, status: :unprocessable_entity }
       end
