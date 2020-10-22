@@ -22,7 +22,7 @@ class BurritosInfoController < ApplicationController
       else
         flash[:notice] = 'An error ocurred!'
         format.html { render :edit }
-        
+
         format.json { render json: @burritos_info.errors, status: :unprocessable_entity }
       end
     end
